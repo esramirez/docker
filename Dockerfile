@@ -16,9 +16,10 @@ RUN apt-get update &&     apt-get install --no-install-recommends       build-es
 VOLUME /config
 
 RUN pip3 install sqlalchemy
-# Start Home Assistant
-CMD [ "python3", "-m", "homeassistant", "--config", "/config" ]
+
 
 # Install Home Assistant
 RUN pip3 install homeassistant==0.43.0
 
+# Start Home Assistant
+CMD [ "python3", "-m", "homeassistant", "--config", "/config" ]
